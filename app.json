@@ -1,0 +1,38 @@
+{
+  "expo": {
+    "name": "app",
+    "slug": "app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/funaab.png",
+    "permissions": [
+      "network"
+    ],
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/funaablogo.jpg",
+      "resizeMode": "center",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "8fd513e9-3107-47fa-b38c-98a93df96fee"
+      }
+    }
+  }
+}
