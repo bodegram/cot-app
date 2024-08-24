@@ -24,7 +24,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.bodegram.app"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -33,6 +34,12 @@
       "eas": {
         "projectId": "8fd513e9-3107-47fa-b38c-98a93df96fee"
       }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/8fd513e9-3107-47fa-b38c-98a93df96fee"
     }
   }
 }
