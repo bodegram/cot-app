@@ -2,10 +2,14 @@ import { View, Text, StyleSheet, SafeAreaView, ScrollView, StatusBar, RefreshCon
 import React, { useEffect, useState } from "react";
 import Card from "../components/Card";
 import { api } from "../utils/api";
+import { useSelector } from "react-redux";
 export default function Home() {
+  const {data:accessToken} = useSelector(state=>state.auth)
   const [rooms, setRooms] = useState(null)
   const [refreshing, setRefreshing] = useState(false)
+  
   const fetchRooms = async () => {
+    api.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`
     const { data } = await api.get('/classrooms')
     setRooms(data?.data)
   }

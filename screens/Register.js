@@ -10,15 +10,54 @@ import {
 import React, { useState } from "react";
 import Button from "../components/Button";
 import { FontAwesome } from '@expo/vector-icons';
+import {useToast} from 'react-native-toast-notifications'
+import { api } from "../utils/api";
 
 
-export default function Register() {
+
+export default function Register({navigation}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [cpassword, setCpassword] = useState("");
   const [showPassword, setShowPassword] = useState(false)
   const [showCpassword, setShowCpassword] = useState(false)
-  const handleSubmit = () => {};
+  const toast = useToast()
+
+  const handleSubmit = async() => {
+    if(email === '' || password === '' || cpassword === ''){
+      toast.show('Field is blank', {
+        type:'danger',
+        placement:'bottom'
+      })
+    }
+    else{
+       if(cpassword !== password){
+        toast.show('Password does not match', {
+          type:'danger',
+          placement:'bottom'
+        })
+       }
+       else{
+        try{
+          const {data} = await api.post('/user/register', {email, password})
+          toast.show('Account successfully created', {
+            type:'success',
+            placement:'bottom'
+          })
+          navigation.navigate('Login')
+
+        }
+        catch(error){
+          console.log(error);
+          
+          toast.show(error.response.data.message, {
+            type:'danger',
+            placement:'bottom'
+          })
+        }
+       }
+    }
+  };
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>

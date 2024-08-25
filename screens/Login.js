@@ -114,12 +114,7 @@ export default function Login() {
               marginBottom: 14,
             }}
           >
-            <View>
-              <View style={{ flexDirection: "row" }}>
-                <TextInput style={{ backgroundColor: "ghostwhite" }} />
-                <Text>Remember me</Text>
-              </View>
-            </View>
+           
             <View>
               <TouchableOpacity
                 onPress={() => navigation.navigate("ForgetPassword")}
