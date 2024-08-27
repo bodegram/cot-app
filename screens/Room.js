@@ -58,7 +58,7 @@ export default function Room() {
         <SafeAreaView style={styles.container}>
             <ScrollView>
                 <View>
-                    <Image source={require('../assets/classroom2.jpg')} style={{width:'100%', height:180}}/>
+                    <Image source={require('../assets/funaablogo.jpg')} style={{width:'100%', height:180}}/>
                 </View>
                 <View style={{ paddingHorizontal: 10, marginTop:15 }}>
                     <View>

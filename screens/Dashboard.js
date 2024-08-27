@@ -5,6 +5,8 @@ import Time from "../utils/Time";
 import { Feather, Ionicons, AntDesign } from "@expo/vector-icons";
 import { View, Text, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import Search from "./Search";
+import Notifications from "./Notifications";
 
 const Tab = createBottomTabNavigator();
 
@@ -51,6 +53,25 @@ function Dashboard() {
         
         }}
       />
+       <Tab.Screen name="Search" component={Search} options={{
+         tabBarIcon: ({ focused }) => (
+          <Feather
+            name="search"
+            size={24}
+            color={focused ? "green" : "black"}
+          />
+        ),
+        headerShown:false
+       }}/>
+      <Tab.Screen name="Notification" component={Notifications} options={{
+         tabBarIcon: ({ focused }) => (
+          <Feather
+            name="bell"
+            size={24}
+            color={focused ? "green" : "black"}
+          />
+        ),
+       }}/>
       <Tab.Screen
         name="Profile"
         component={Profile}
@@ -74,6 +95,8 @@ function Dashboard() {
         
         }}
       />
+     
+
     </Tab.Navigator>
   );
 }

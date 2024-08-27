@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "app",
-    "slug": "app",
+    "name": "Classroom-Occupancy-Tracker",
+    "slug": "Classroom-Occupancy-Tracker",
     "version": "1.0.0",
     "platforms": ["ios", "android"],
     "orientation": "portrait",
@@ -11,7 +11,7 @@
     ],
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/funaablogo.jpg",
+      "image": "./assets/splash.png",
       "resizeMode": "center",
       "backgroundColor": "#ffffff"
     },

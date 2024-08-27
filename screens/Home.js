@@ -3,6 +3,9 @@ import React, { useEffect, useState } from "react";
 import Card from "../components/Card";
 import { api } from "../utils/api";
 import { useSelector } from "react-redux";
+import Loader from "../components/Loader";
+
+
 export default function Home() {
   const {data:accessToken} = useSelector(state=>state.auth)
   const [rooms, setRooms] = useState(null)
@@ -32,6 +35,8 @@ export default function Home() {
     }, 1000)
   }
   return (
+    <>
+    {rooms === null && <Loader/>}
     <SafeAreaView style={styles.container}>
       <StatusBar backgroundColor='green' />
       <ScrollView refreshControl={<RefreshControl
@@ -48,12 +53,13 @@ export default function Home() {
         }
       </ScrollView>
     </SafeAreaView>
+    </>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "white",
-    flex: 1
+    flex: 1,
+    paddingHorizontal:10
   },
 });
