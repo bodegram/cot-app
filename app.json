@@ -12,7 +12,7 @@
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
-      "resizeMode": "center",
+      "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
     "assetBundlePatterns": [
@@ -40,7 +40,9 @@
       "policy": "appVersion"
     },
     "updates": {
-      "url": "https://u.expo.dev/8fd513e9-3107-47fa-b38c-98a93df96fee"
+      "url": "https://u.expo.dev/8fd513e9-3107-47fa-b38c-98a93df96fee",
+      "fallbackToCacheTimeout": 0,
+      "checkAutomatically": "ON_ERROR_RECOVERY"
     }
   }
 }
