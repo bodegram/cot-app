@@ -72,37 +72,37 @@ export default function Login() {
               fontSize: 22,
               marginBottom: 25,
               marginTop: 10,
-              color: "black",
+              color: "green",
               fontWeight: "bold",
             }}
           >
-            Hey there!
+            Login
           </Text>
           <View style={styles.inputContainer}>
-            <Text style={{ marginBottom: 4 }}>Email Address</Text>
-            <TextInput style={styles.input} placeholder="youremail@here.com" onChangeText={(text)=>setEmail(text)} cursorColor='black' />
+          <FontAwesome name="user-circle-o" size={20} color="green" style={{position:'absolute', top:15, left:10, zIndex:10}} />
+            <TextInput style={styles.input} placeholder="Email" onChangeText={(text)=>setEmail(text)} cursorColor='black' />
           </View>
           <View style={styles.inputContainer}>
-            <Text style={{ marginBottom: 4 }}>Password</Text>
             <TouchableOpacity
               style={{
                 position: "absolute",
                 right: 10,
-                marginTop: 36,
+                marginTop: 20,
                 zIndex: 1,
               }}
               onPress={() => setShowPassword(!showPassword)}
             >
-              {!showPassword ? (
+              {showPassword ? (
                 <FontAwesome name="eye-slash" size={24} color="black" />
               ) : (
                 <FontAwesome name="eye" size={24} color="black" />
               )}
             </TouchableOpacity>
+            <FontAwesome name="lock" size={24} color="green" style={{position:'absolute', top:15, left:10, zIndex:10}} />
             <TextInput
               style={styles.input}
-              placeholder="********"
-              secureTextEntry={showPassword ? true : false}
+              placeholder="Password"
+              secureTextEntry
               onChangeText={(text)=>setPassword(text)}
               cursorColor='black'
             />
@@ -115,15 +115,7 @@ export default function Login() {
             }}
           >
            
-            <View>
-              <TouchableOpacity
-                onPress={() => navigation.navigate("ForgetPassword")}
-              >
-                <Text style={{ textDecorationStyle: "solid" }}>
-                  Forgot Password
-                </Text>
-              </TouchableOpacity>
-            </View>
+           
           </View>
           <View>
             <Button
@@ -133,8 +125,17 @@ export default function Login() {
               textColor="white"
             />
           </View>
+          <View style={{marginBottom:10}}>
+              <TouchableOpacity
+                onPress={() => navigation.navigate("ForgetPassword")}
+              >
+                <Text style={{ textDecorationStyle: "solid", textAlign:'center', color:'green' }}>
+                  Forgot Password
+                </Text>
+              </TouchableOpacity>
+            </View>
           <View style={{ flexDirection: "row", justifyContent: "center" }}>
-            <Text>Don't have an account? </Text>
+            <Text>No account yet? </Text>
             <TouchableOpacity onPress={() => navigation.navigate("Register")}>
               <Text style={{ color: "green" }}>Sign up</Text>
             </TouchableOpacity>
@@ -153,10 +154,12 @@ const styles = StyleSheet.create({
   loginFields: {},
   input: {
     backgroundColor: "ghostwhite",
-    padding: 14,
-    borderRadius: 5,
+    paddingVertical: 14,
+    borderRadius: 30,
+    paddingHorizontal:35
   },
   inputContainer: {
     marginBottom: 15,
+    position:'relative'
   },
 });
