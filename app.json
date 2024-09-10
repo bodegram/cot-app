@@ -26,7 +26,12 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.bodegram.app"
+      "package": "com.bodegram.app",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyDQw9X5B98WCkLFEIQi1rqzZ2Kht64hwGw"
+        }
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"

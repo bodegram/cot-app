@@ -21,7 +21,7 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch()
-  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState(true);
   const navigation = useNavigation();
   const {error, errorMessage,loading, isAuthenticated} = useSelector(state=>state.auth)
   const toast = useToast()
@@ -102,7 +102,7 @@ export default function Login() {
             <TextInput
               style={styles.input}
               placeholder="Password"
-              secureTextEntry
+              secureTextEntry={showPassword}
               onChangeText={(text)=>setPassword(text)}
               cursorColor='black'
             />

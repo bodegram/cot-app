@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView, ScrollView, StyleSheet, TouchableOpacity } from 'react-native'
+import { View, Text, SafeAreaView, ScrollView, StyleSheet, TouchableOpacity, StatusBar } from 'react-native'
 import React, { useState, useEffect } from 'react'
 import Map from '../components/Map'
 import SearchBar from '../components/Searchbar'
@@ -36,7 +36,6 @@ export default function Search({navigation}) {
                 typeof room === 'object' && room?.name?.toLowerCase().startsWith(lowerCaseQuery)
             );
 
-            console.log('results', filteredRooms);
             setResults(filteredRooms);
         } else {
             setResults([]); // Handle empty query or non-array rooms case
@@ -51,20 +50,7 @@ export default function Search({navigation}) {
                     query === '' && (
                         <>
                             <Map />
-                            <View style={{ paddingHorizontal: 10, marginTop: 15 }}>
-                                <Text style={{ marginBottom: 5 }}>Current Location</Text>
-                                <View style={{ flexDirection: 'row' }}>
-                                    <MaterialIcons name="location-on" size={20} color="black" />
-                                    <Text>Nimbe Library</Text>
-                                </View>
-                            </View>
-                            <View style={{ paddingHorizontal: 10, marginTop: 15 }}>
-                                <Text style={{ marginBottom: 5 }}>Destination</Text>
-                                <View style={{ flexDirection: 'row' }}>
-                                    <MaterialIcons name="location-on" size={20} color="black" />
-                                    <Text>Nimbe Library</Text>
-                                </View>
-                            </View>
+            
                         </>
                     )
                 }
@@ -81,7 +67,7 @@ export default function Search({navigation}) {
                     {
                         results?.map((item, index) => (
                            <TouchableOpacity onPress={()=>navigation.navigate('Room', {id:item._id})}>
-                             <View style={{ marginBottom: 15 }} key={index}>
+                             <View style={{ marginBottom: 15 }} key={item?._id}>
                                 <Text>{item?.name}</Text>
                             </View>
                            </TouchableOpacity>

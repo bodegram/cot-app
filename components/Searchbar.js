@@ -46,7 +46,7 @@ export default function SearchBar({query, setQuery}) {
 
     return (
             <View style={{
-                marginTop: 2,
+                marginTop: 25,
                 flexDirection: 'row',
                 gap: 4,
                 paddingHorizontal:10,

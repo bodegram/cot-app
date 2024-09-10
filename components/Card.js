@@ -12,14 +12,43 @@ export default function Card({ backgroundColor, location, name, id, imgIndex }) 
     require('../assets/room4.jpg'),
     require('../assets/room6.jpeg'),
     require('../assets/room7.jpg'),
+    require('../assets/room8.jpg'),
+    require('../assets/room1.jpeg'),
+    require('../assets/room2.jpeg'),
+    require('../assets/room3.jpg'),
+    require('../assets/room4.jpg'),
+    require('../assets/room6.jpeg'),
+    require('../assets/room7.jpg'),
+    require('../assets/room8.jpg'),
+    require('../assets/room1.jpeg'),
+    require('../assets/room2.jpeg'),
+    require('../assets/room3.jpg'),
+    require('../assets/room4.jpg'),
+    require('../assets/room6.jpeg'),
+    require('../assets/room7.jpg'),
+    require('../assets/room8.jpg'),
+    require('../assets/room1.jpeg'),
+    require('../assets/room2.jpeg'),
+    require('../assets/room3.jpg'),
+    require('../assets/room4.jpg'),
+    require('../assets/room6.jpeg'),
+    require('../assets/room7.jpg'),
+    require('../assets/room8.jpg'),
+    require('../assets/room1.jpeg'),
+    require('../assets/room2.jpeg'),
+    require('../assets/room3.jpg'),
+    require('../assets/room4.jpg'),
+    require('../assets/room6.jpeg'),
+    require('../assets/room7.jpg'),
     require('../assets/room8.jpg')
+
   ]
   const navigation = useNavigation()
   return (
     <TouchableOpacity onPress={() => navigation.navigate('Room', { id: id })}>
       <View style={[styles.card]}>
-        <Image source={images[imgIndex]} style={{ width: 70, height: 50, borderRadius:5 }} />
-        <Text style={{ fontSize: 14, marginBottom: 5, color: 'green', textAlign: 'center', marginTop: 4 }}>{name}</Text>
+        <Image source={images[imgIndex]} style={{ width: 70, height: 50, borderRadius: 5 }} />
+        <Text style={{ fontSize: 10, marginBottom: 5, color: 'green', textAlign: 'center', marginTop: 4 }}>{name.slice(0,12)}</Text>
       </View>
     </TouchableOpacity>
   )
@@ -30,7 +59,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     borderRadius: 10,
     position: 'relative',
-    marginBottom:5
+    marginBottom: 5,
 
   }
 })

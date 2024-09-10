@@ -44,7 +44,7 @@ export default function Home() {
     {rooms === null && <Loader/>}
     <SafeAreaView style={styles.container}>
       <StatusBar backgroundColor='green' />
-      <ScrollView refreshControl={<RefreshControl
+      <ScrollView showsVerticalScrollIndicator={false} refreshControl={<RefreshControl
       refreshing={refreshing}
       onRefresh={onRefresh}
       />} >
